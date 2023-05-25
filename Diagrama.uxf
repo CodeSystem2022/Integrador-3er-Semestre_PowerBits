@@ -1,0 +1,75 @@
+<diagram program="umletino" version="15.1"><zoom_level>7</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>651</x><y>287</y><w>147</w><h>77</h></coordinates><panel_attributes>Comida
+--
+_ClassAttribute: 
+	Monto (int)
+	Detalles (String)
+--
+_Metodos: 
+	get and set 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>406</x><y>84</y><w>147</w><h>112</h></coordinates><panel_attributes>Gastos
+--
+_ClassAttribute: 
+	Ingresos (int)
+	Fijos o Variables (String)
+	Mes (String)
+		            
+--
+_Metodos: 
+	get and set
+	mostrar_Detalles
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>154</x><y>287</y><w>147</w><h>98</h></coordinates><panel_attributes>Casa
+--
+_ClassAttribute: 
+	Impuestos (int)
+	Servicios (int)
+	Alquiler (int)
+	Monto_total (int)
+--
+_Metodos: 
+	get and set </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>287</y><w>147</w><h>84</h></coordinates><panel_attributes>Tarjeta de Crédito
+--
+_ClassAttribute: 
+	Nombre_tarjeta (String)
+	Monto (int)
+--
+_Metodos: 
+	get and set </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>315</x><y>287</y><w>147</w><h>98</h></coordinates><panel_attributes>Auto
+--
+_ClassAttribute: 
+	Patente (int)
+	Combustible (int)
+	Seguro (int)
+	Monto_total (int)
+--
+_Metodos: 
+	get and set </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>812</x><y>287</y><w>147</w><h>70</h></coordinates><panel_attributes>Indumentaria
+--
+_ClassAttribute:
+	Monto (int)
+--
+_Metodos: 
+	get and set 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>287</y><w>147</w><h>70</h></coordinates><panel_attributes>Educación
+--
+_ClassAttribute: 
+	Monto (int)
+--
+_Metodos: 
+	get and set 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>476</x><y>189</y><w>56</w><h>77</h></coordinates><panel_attributes>lt=&lt;-
+m1=
+m2=
+ Extends</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>70</x><y>238</y><w>427</w><h>28</h></coordinates><panel_attributes>lt=-
+m1=
+m2=
+</panel_attributes><additional_attributes>10;20;590;20</additional_attributes></element><element><id>Relation</id><coordinates><x>385</x><y>245</y><w>21</w><h>56</h></coordinates><panel_attributes>lt=&lt;-
+m1=</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>476</x><y>238</y><w>420</w><h>28</h></coordinates><panel_attributes>lt=-
+m1=
+m2=
+</panel_attributes><additional_attributes>10;20;580;20</additional_attributes></element><element><id>Relation</id><coordinates><x>224</x><y>245</y><w>21</w><h>56</h></coordinates><panel_attributes>lt=&lt;-
+m1=</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>70</x><y>245</y><w>21</w><h>56</h></coordinates><panel_attributes>lt=&lt;-
+m1=</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>560</x><y>245</y><w>21</w><h>56</h></coordinates><panel_attributes>lt=&lt;-
+m1=</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>714</x><y>245</y><w>21</w><h>56</h></coordinates><panel_attributes>lt=&lt;-
+m1=</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>875</x><y>245</y><w>21</w><h>56</h></coordinates><panel_attributes>lt=&lt;-
+m1=</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element></diagram>
