@@ -1,4 +1,4 @@
-<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>837</x><y>405</y><w>189</w><h>144</h></coordinates><panel_attributes>Comida
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>837</x><y>414</y><w>189</w><h>144</h></coordinates><panel_attributes>Comida
 --
 _ClassAttribute: 
 	Monto (int)
@@ -7,7 +7,7 @@ _ClassAttribute:
 _Metodos: 
 +get and set()
 +toString() 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>522</x><y>144</y><w>189</w><h>144</h></coordinates><panel_attributes>Gastos
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>522</x><y>153</y><w>189</w><h>144</h></coordinates><panel_attributes>Gastos
 --
 _ClassAttribute: 
 	Ingresos (int)
@@ -19,7 +19,7 @@ _Metodos:
 	get and set
 	mostrar_Detalles
 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>198</x><y>405</y><w>189</w><h>144</h></coordinates><panel_attributes>Casa
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>198</x><y>414</y><w>189</w><h>144</h></coordinates><panel_attributes>Casa
 --
 _ClassAttribute: 
 	Impuestos (int)
@@ -29,7 +29,7 @@ _ClassAttribute:
 --
 _Metodos: 
 +get and set()
-+toString() </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>405</y><w>189</w><h>144</h></coordinates><panel_attributes>Tarjeta de Crédito
++toString() </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>414</y><w>189</w><h>144</h></coordinates><panel_attributes>Tarjeta de Crédito
 --
 _ClassAttribute: 
 	Nombre_tarjeta (String)
@@ -37,7 +37,7 @@ _ClassAttribute:
 --
 _Metodos: 
 +get and set()
-+toString() </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>405</x><y>405</y><w>189</w><h>144</h></coordinates><panel_attributes>Auto
++toString() </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>405</x><y>414</y><w>189</w><h>144</h></coordinates><panel_attributes>Auto
 --
 _ClassAttribute: 
 	Patente (int)
@@ -47,7 +47,7 @@ _ClassAttribute:
 --
 _Metodos: 
 +get and set()
-+toString() </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1044</x><y>405</y><w>189</w><h>171</h></coordinates><panel_attributes>gastos_varios
++toString() </panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1044</x><y>414</y><w>189</w><h>171</h></coordinates><panel_attributes>gastos_varios
 --
 _ClassAttribute:
 -Monto (int)
@@ -60,7 +60,7 @@ _Metodos:
 +get and set()
 +toString() 
 +sumar_montos()
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>630</x><y>405</y><w>189</w><h>144</h></coordinates><panel_attributes>Educación
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>630</x><y>414</y><w>189</w><h>144</h></coordinates><panel_attributes>Educación
 --
 _ClassAttribute: 
 	Monto (int)
@@ -68,22 +68,22 @@ _ClassAttribute:
 _Metodos: 
 +get and set()
 +toString() 
-</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>612</x><y>279</y><w>72</w><h>99</h></coordinates><panel_attributes>lt=&lt;-
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>612</x><y>288</y><w>72</w><h>99</h></coordinates><panel_attributes>lt=&lt;-
 m1=
 m2=
- Extends</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>342</y><w>549</w><h>36</h></coordinates><panel_attributes>lt=-
+ Extends</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>351</y><w>549</w><h>36</h></coordinates><panel_attributes>lt=-
 m1=
 m2=
-</panel_attributes><additional_attributes>10;20;590;20</additional_attributes></element><element><id>Relation</id><coordinates><x>495</x><y>351</y><w>27</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
-m1=</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>612</x><y>342</y><w>540</w><h>36</h></coordinates><panel_attributes>lt=-
+</panel_attributes><additional_attributes>10;20;590;20</additional_attributes></element><element><id>Relation</id><coordinates><x>495</x><y>360</y><w>27</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
+m1=</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>612</x><y>351</y><w>540</w><h>36</h></coordinates><panel_attributes>lt=-
 m1=
 m2=
-</panel_attributes><additional_attributes>10;20;580;20</additional_attributes></element><element><id>Relation</id><coordinates><x>288</x><y>351</y><w>27</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
-m1=</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>351</y><w>27</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
-m1=</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>351</y><w>27</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
-m1=</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>918</x><y>351</y><w>27</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
-m1=</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>1125</x><y>351</y><w>27</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
-m1=</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1080</x><y>126</y><w>171</w><h>162</h></coordinates><panel_attributes>entrada_datos
+</panel_attributes><additional_attributes>10;20;580;20</additional_attributes></element><element><id>Relation</id><coordinates><x>288</x><y>360</y><w>27</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
+m1=</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>90</x><y>360</y><w>27</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
+m1=</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>720</x><y>360</y><w>27</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
+m1=</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>918</x><y>360</y><w>27</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
+m1=</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>1125</x><y>360</y><w>27</w><h>72</h></coordinates><panel_attributes>lt=&lt;-
+m1=</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>1080</x><y>135</y><w>171</w><h>162</h></coordinates><panel_attributes>entrada_datos
 --
 -id_usuario: (int)
 -nombre: (String)
@@ -93,7 +93,7 @@ m1=</panel_attributes><additional_attributes>10;10;10;60</additional_attributes>
 --
 Metodos 
 +get y set()
-+toString()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1278</x><y>126</y><w>189</w><h>171</h></coordinates><panel_attributes>salida_datos
++toString()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>1278</x><y>135</y><w>189</w><h>171</h></coordinates><panel_attributes>salida_datos
 --
 
 --
