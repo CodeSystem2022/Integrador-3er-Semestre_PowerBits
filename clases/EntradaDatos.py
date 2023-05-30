@@ -16,6 +16,9 @@ class EntradaDatos:
                f"\nEmail: {self._email}" \
                f"\nMonto Inicial: {self._monto_inicial}"
 
+    def mostrar_detalles(self):
+        return self.__str__()
+
     @property
     def nombre(self):
         return self._nombre
