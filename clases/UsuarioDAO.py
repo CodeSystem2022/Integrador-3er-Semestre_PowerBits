@@ -123,3 +123,22 @@ class UsuarioDAO2:
                                                # en la base de datos y lo asigna a la variable usuario_actualizado.
 
         print(f'\n- Usuario Actualizado con éxito: {usuario_actualizado}') # Mostramos un mensaje que indica la cantidad de usuarios actualizados con éxito.
+
+    @classmethod
+    #Creamos el metodo eliminar usuario
+    def eliminar_usuario(cls, usuario_registrado, cursor): #Agregamos los parametos necesarios
+        valores = (usuario_registrado,) #Tupla de valores que contiene los datos del usuario
+        cursor.execute(cls._ELIMINAR_USUARIO, valores) #Se ejecuta el cursor con la sentencia para eliminar el usuario y la tupla de valores
+        usuario_eliminado = cursor.rowcount #almacena la cantidad de usuarios que fueron eliminados de la base de datos
+                                            # y los asigna a la variable usuario_eliminado
+        print(f'\n- Usuario eliminado con éxito: {usuario_eliminado}') #Mostramos el usuario eliminado
+
+
+
+    @classmethod
+    #Creamos el metodo para eliminar todos los usuarios
+    def limpiar_usuarios(cls, cursor): #Pasamos el cursor como parametro
+        cursor.execute(cls._LIMPIAR_USUARIOS) #Se ejecuta el cursor con la sentencia para eliminar los usuarios
+        usuarios_eliminados = cursor.rowcount #almacena la cantidad de usuarios que fueron eliminados de la base de datos
+                                            # y los asigna a la variable usuarios_eliminados
+        print(f'\n- Usuarios eliminados con éxito: {usuarios_eliminados}')
