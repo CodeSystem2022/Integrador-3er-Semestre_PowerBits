@@ -105,7 +105,7 @@ class UsuarioDAO2:
         print('--------------------------------------------------------------------------------------------------')
 
     @classmethod
-    #Método para actualizar datos del usuario, recibe los siguientes parametros nombre_nuevo, apellido_nuevo, email_nuevo,
+    # Método para actualizar datos del usuario, recibe los siguientes parametros nombre_nuevo, apellido_nuevo, email_nuevo,
     # monto_inicial_nuevo, nombre_usuario_nuevo, password_nuevo, usuario_registrado y cursor
     def actualizar_usuario(cls, nombre_nuevo, apellido_nuevo, email_nuevo, monto_inicial_nuevo, nombre_usuario_nuevo,
                            password_nuevo, usuario_registrado, cursor):
@@ -125,7 +125,7 @@ class UsuarioDAO2:
         print(f'\n- Usuario Actualizado con éxito: {usuario_actualizado}') # Mostramos un mensaje que indica la cantidad de usuarios actualizados con éxito.
 
     @classmethod
-    #Creamos el metodo eliminar usuario
+    # Creamos el método eliminar usuario
     def eliminar_usuario(cls, usuario_registrado, cursor): #Agregamos los parametos necesarios
         valores = (usuario_registrado,) #Tupla de valores que contiene los datos del usuario
         cursor.execute(cls._ELIMINAR_USUARIO, valores) #Se ejecuta el cursor con la sentencia para eliminar el usuario y la tupla de valores
@@ -133,12 +133,33 @@ class UsuarioDAO2:
                                             # y los asigna a la variable usuario_eliminado
         print(f'\n- Usuario eliminado con éxito: {usuario_eliminado}') #Mostramos el usuario eliminado
 
-
+    @classmethod
+    # Creamos el método actualizar usuario pero en este caso para la función de ADMIN, que recibe los siguientes parametros:
+    # nombre_nuevo, apellido_nuevo, email_nuevo, monto_inicial_nuevo,
+    # nombre_usuario_nuevo, password_nuevo, id_usuario_actualizar y cursor.
+    def actualizar_usuario_admin(cls, nombre_nuevo, apellido_nuevo, email_nuevo, monto_inicial_nuevo,
+                                 nombre_usuario_nuevo,
+                                 password_nuevo, id_usuario_actualizar, cursor):
+        # ahora, para poder crear la tupla con los valores que necesita la sentencia de _ACTUALIZAR_USUARIO_ADMIN,
+        # tenemos que acceder a cada atributo del objeto por separado.
+        valores = (nombre_nuevo,
+                   apellido_nuevo,
+                   email_nuevo,
+                   monto_inicial_nuevo,
+                   nombre_usuario_nuevo,
+                   password_nuevo,
+                   id_usuario_actualizar
+                   )
+        # De esta forma podremos ejecutar la acción del cursor junto con los valores necesarios
+        cursor.execute(cls._ACTUALIZAR_USUARIO_ADMIN, valores)
+        usuario_actualizado = cursor.rowcount # Recupera el número de filas afectadas por la operación de actualización
+                                              # dentro de la base de datos y lo asigna a la variable usuario_actualizado.
+        print(f'\n- Usuario Actualizado con éxito: {usuario_actualizado}') # Muestra un mensaje con la cantidad de usuarios actualizados.
 
     @classmethod
-    #Creamos el metodo para eliminar todos los usuarios
-    def limpiar_usuarios(cls, cursor): #Pasamos el cursor como parametro
-        cursor.execute(cls._LIMPIAR_USUARIOS) #Se ejecuta el cursor con la sentencia para eliminar los usuarios
-        usuarios_eliminados = cursor.rowcount #almacena la cantidad de usuarios que fueron eliminados de la base de datos
+    # Creamos el método para eliminar todos los usuarios
+    def limpiar_usuarios(cls, cursor): # Pasamos el cursor como parametro
+        cursor.execute(cls._LIMPIAR_USUARIOS) # Se ejecuta el cursor con la sentencia para eliminar los usuarios
+        usuarios_eliminados = cursor.rowcount # almacena la cantidad de usuarios que fueron eliminados de la base de datos
                                             # y los asigna a la variable usuarios_eliminados
         print(f'\n- Usuarios eliminados con éxito: {usuarios_eliminados}')
