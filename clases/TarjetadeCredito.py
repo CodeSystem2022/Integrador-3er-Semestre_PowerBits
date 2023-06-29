@@ -1,6 +1,9 @@
-class TarjetadeCredito:
-    def __init__(self, Nombre_tarjeta, monto):
-        self._Nombre_tarjeta = Nombre_tarjeta
+from clases.Gasto import Gasto
+
+
+class TarjetaDeCredito(Gasto):
+    def __init__(self, nombre_tarjeta, monto):
+        self._nombre_tarjeta = nombre_tarjeta
         self._monto = monto
 
     @property
@@ -12,15 +15,27 @@ class TarjetadeCredito:
         self._monto = monto
 
     @property
-    def Nombre_tarjeta(self):
-        return self._Nombre_tarjeta
+    def nombre_tarjeta(self):
+        return self._nombre_tarjeta
 
-    @Nombre_tarjeta.setter
-    def Nombre_tarjeta(self, Nombre_tarjeta):
-        self._Nombre_tarjeta = Nombre_tarjeta
+    @nombre_tarjeta.setter
+    def nombre_tarjeta(self, nombre_tarjeta):
+        self._nombre_tarjeta = nombre_tarjeta
 
     def __str__(self):
-        return f'Nombre de la tarjeta: {self._Nombre_tarjeta}, monto: ${self._monto}'
+        return f'-> Gastos de la tarjeta de crédito\n' \
+               f'\n- Nombre de la tarjeta: {self._nombre_tarjeta}' \
+               f'\n- Monto: ${self._monto}'
+
+    def mostrar_detalle(self):
+        return self.__str__()
+
+
+
+
+
+
+
 
 
 
