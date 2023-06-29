@@ -8,6 +8,7 @@ from clases.Casa import Casa
 from clases.Educacion import Educacion
 from clases.Gastos_varios import Gastos_varios
 from clases.TarjetadeCredito import TarjetaDeCredito
+from clases.Usuario import Usuario
 from clases.UsuarioDAO import UsuarioDAO
 from clases.Conexion import Conexion
 from clases.Vehiculo import Vehiculo
@@ -247,12 +248,7 @@ class Main:
                             except Exception as e:
                                 print(f'\n-> Ocurrió un error en el menu de usuario: {e}')
 
-
-
-                except Exception as e:
-                    print(f'\n-> Ocurrió un error en el menu principal: {e}')
-
- elif opcion == 2:
+                    elif opcion == 2:
 
                         print('\n -- USUARIO NUEVO --')
                         print('-> Por favor digite: ')
@@ -268,4 +264,44 @@ class Main:
                         # ahora, con la clase UsuarioDAO y el método agregar_usuario, podremos agregar un usuario nuevo
                         # a la base de datos, para poder realizar esta acción le pasamos al método, el objeto creado y
                         # el cursor.
-                        UsuarioDAO2.agregar_usuario(usuario_nuevo, cursor)
+                        UsuarioDAO.agregar_usuario(usuario_nuevo, cursor)
+
+
+                    elif opcion == 3:
+                        # en esta parte, lo que hicimos fue generar "constantes" con los datos del admin, para poder
+                        # iniciar sesión, y que no cualquiera pueda entrar a esta parte
+                        _USUARIO_ADMIN = 'admin'
+                        _PASSWORD_ADMIN = 'admin'
+                        # pedimos los datos para después comprobar si son correctos
+                        print('\n-> Esta intentando ingresar como ADMIN, por favor digite: ')
+                        usuario_admin = input('- Usuario ADMIN: ')
+                        password_admin = input('- Password ADMIN: ')
+                        # con esta bandera, vamos a entrar al ciclo while, este va a funcionar hasta que la bandera
+                        # tome el valor de falso
+                        bandera = True
+                        while bandera:
+                            # comprobamos si el usuario y el password del admin son iguales a las "constantes"
+                            if usuario_admin == _USUARIO_ADMIN and password_admin == _PASSWORD_ADMIN:
+
+                                # esta opción solo sirve para el menu de administrador
+                                # ponemos None para que no tenga valor, después una vez que entro al ciclo va a tener
+                                # el valor que el usuario le asigne
+                                opcion_admin = None
+
+                                # el ciclo while interior, va a funcionar mientras la opción sea diferente de 3,
+                                # en el momento que sea igual a 3, el programa sale del menu de administrador y
+                                # vuelve al menu principal
+                                while opcion_admin != 5:
+                                    try:
+                                        print('\n     ------ MENU ADMIN ------')
+                                        print('1- Ver lista de usuarios')
+                                        print('2- Actualizar usuario')
+                                        print('3- Limpiar tabla de usuarios')
+                                        print('4- Limpiar tabla de gastos')
+                                        print('5- Salir del menu de ADMIN')
+
+
+
+                except Exception as e:
+                    print(f'\n-> Ocurrió un error en el menu principal: {e}')
+
