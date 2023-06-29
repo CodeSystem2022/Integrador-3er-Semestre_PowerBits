@@ -11,6 +11,7 @@ from clases.TarjetadeCredito import TarjetaDeCredito
 from clases.UsuarioDAO import UsuarioDAO
 from clases.Conexion import Conexion
 from clases.Vehiculo import Vehiculo
+from clases.Gasto import Gasto
 
 
 class Main:
@@ -173,5 +174,80 @@ class Main:
                                     # Desde el objeto "tarjeta1" llamamos al metodo "guardar_gastos_tarjeta" donde vamos a guardar los gastos de la tarjeta de credito ingresados
                                     gastos_varios1.guardar_gastos_varios(gastos_varios1, cursor, usuario_registrado,
                                                                          password_registrado)
+
+                                    # una vez que se termina de tomar todos los datos de los gastos, pasamos a la parte del manu de detalle
+                                    # donde ingresamos con una bandera = True, para que entre directo al while
+                                    bandera = True
+                                    while bandera:
+                                        # utilizamos un try para atrapar los errores que puedan ocurrir
+                                        try:
+                                            #mostramos el manu
+                                            print('\n    - - Menú de detalle - -')
+                                            print('1- Obtener resumen detallado')
+                                            print('2- Mostrar monto final')
+                                            print('3- Salir del menú de detalle')
+
+                                            opcion_resumen = int(input('\n-> Digite opción: '))
+
+                                            # aca si la opcion = 1, mostramos todos los detalles de los objetos creados,
+                                            # con el método mostrar_detalle()
+                                            if opcion_resumen == 1:
+
+                                                print(f'\n--------------------------------------------------')
+                                                print(f'           RESUMEN DETALLADO DE GASTOS           ')
+                                                print(f'--------------------------------------------------')
+                                                print(casa1.mostrar_detalle())
+                                                print(f'--------------------------------------------------')
+                                                print(educacion1.mostrar_detalle())
+                                                print(f'--------------------------------------------------')
+                                                print(tarjeta1.mostrar_detalle())
+                                                print(f'--------------------------------------------------')
+                                                print(vehiculo1.mostrar_detalle())
+                                                print(f'--------------------------------------------------')
+                                                print(gastos_varios1.mostrar_detalles())
+                                                print(f'--------------------------------------------------')
+
+                                                # aca obtenemos el monto incial del usuario que ha iniciado sesion,
+                                                # esto lo hacemos utilizando el metodo obtener_monto_inicial(), pasandole
+                                                # el usuario registrado y el cursor para que pueda hacer la consulta
+                                                monto_inicial_obtenido = Gasto.obtener_monto_inicial(usuario_registrado, cursor)
+                                                # aca hacemos la resta del monto inicial obtenido y el total de los gastos
+                                                resto_sueldo = (monto_inicial_obtenido - total_global)
+
+                                                # luego mostramos en forma de resumen
+                                                print(f'\n\n                       RESUMEN                       ')
+                                                print(f'-------------------------------------------------')
+                                                print(f'- Ingreso mensual registrado  ->   ${monto_inicial_obtenido}')
+                                                print(f'- Total del gastos mensuales  ->   ${total_global}')
+                                                print(f'                                -----------------')
+                                                print(f'- Total resto                 ->   ${resto_sueldo}')
+                                                print(f'-------------------------------------------------')
+
+                                            # aca solo mostramos el monto total de los gastos
+                                            elif opcion_resumen == 2:
+                                                print(f'\n-------------------------------------------------')
+                                                print(f'- Monto total de los gastos: ${total_global}')
+                                                print(f'-------------------------------------------------')
+                                            # si el usuario ingresa 3, la bandera pasa a ser falsa y sale del ciclo
+                                            elif opcion_resumen == 3:
+                                                bandera = False
+                                            # si no ingreso una opcion incorrecta
+                                            else:
+                                                print('\n-> Opción ingresada no existe')
+                                        # esto nos va a decir si tenemos un type error
+                                        except Exception as e:
+                                            print(f'\n-> Ocurrió un error: {e}')
+
+                                elif opcion_usuario == 5:
+                                    print('\n-> Salió del menú de usuario')
+
+                                else:
+                                    print('\n-> Opción incorrecta <-')
+                            # esto nos va a decir si hay algún error en el menu de usuario
+                            except Exception as e:
+                                print(f'\n-> Ocurrió un error en el menu de usuario: {e}')
+
+                
+
                 except Exception as e:
                     print(f'\n-> Ocurrió un error en el menu principal: {e}')
