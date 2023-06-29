@@ -12,7 +12,7 @@
 #   - eliminar usuario
 
 
-class UsuarioDAO2:
+class UsuarioDAO:
     """"
         DAO significa: Data Acces Object
         CRUD significa:
