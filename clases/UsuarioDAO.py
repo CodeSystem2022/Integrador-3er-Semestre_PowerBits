@@ -69,3 +69,19 @@ class UsuarioDAO2:
                    usuario_nuevo.password)
         # de esta forma podremos ejecutar la acción del cursor junto con los valores necesarios de la sentencia
         cursor.execute(cls._INSERTAR_USUARIO, valores)
+
+    @classmethod
+    # este método solo recibe el cursor, para poder realizar la acción
+    def mostrar_usuarios(cls, cursor):
+        # utilizamos la sentencia _SELECCIONAR, para que tome todos los usuarios registrados en la base de datos
+        cursor.execute(cls._MOSTRAR_USUARIOS)
+        # aca al utilizar _SELECCIONAR, se van a guardar todos los registros en una sola variable
+        resultados = cursor.fetchall()
+        # entonces creamos un ciclo for para poder iterar cada uno de ellos
+        print('-------------------------------------------------------------------------------------')
+        print('                         -> LISTA DE USUARIOS REGISTRADOS <-                         ')
+        # aca se va a mostrar de a uno, en un tipo de formato "lista"
+        for resultado in resultados:
+            print('-------------------------------------------------------------------------------------')
+            print(f'{resultado}')
+        print('-------------------------------------------------------------------------------------')
