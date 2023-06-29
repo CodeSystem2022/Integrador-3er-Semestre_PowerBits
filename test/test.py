@@ -247,7 +247,7 @@ class Main:
                             except Exception as e:
                                 print(f'\n-> Ocurrió un error en el menu de usuario: {e}')
 
-                
+
 
                 except Exception as e:
                     print(f'\n-> Ocurrió un error en el menu principal: {e}')
