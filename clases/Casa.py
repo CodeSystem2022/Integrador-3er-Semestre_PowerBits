@@ -1,20 +1,29 @@
-class Casa:
-    def __init__(self, impuestos, servicios, alquiler):
+from clases.Gasto import Gasto
+
+
+class Casa(Gasto):
+    def __init__(self, impuestos, servicios, alquiler, alimentos):
         self._impuestos = impuestos
         self._servicios = servicios
         self._alquiler = alquiler
+        self._alimentos = alimentos
+        self._monto = self._impuestos + self._servicios + self._alquiler + self._alimentos
 
     def __str__(self):
-        return f"\n-> Gastos de la casa" \
-               f"\n- Impuestos: {self._impuestos}" \
-               f"\n- Servicios: {self._servicios}" \
-               f"\n- Alquiler: {self._alquiler}"
+        return f"-> Gastos de la casa\n" \
+               f"\n- Impuestos: ${self._impuestos}" \
+               f"\n- Servicios: ${self._servicios}" \
+               f"\n- Alquiler: ${self._alquiler}" \
+               f"\n- Alimentos: ${self._alimentos}"
 
     def mostrar_detalle(self):
         return self.__str__()
 
-
     # METODOS GETTER AND SETTER
+    @property
+    def monto(self):
+        return self._monto
+
     @property
     def impuestos(self):
         return self._impuestos
@@ -39,10 +48,11 @@ class Casa:
     def alquiler(self, alquiler):
         self._alquiler = alquiler
 
-    # METODO PARA SUMAR TODO
-    def monto_total(self):
-        total = 0
-        total = self._impuestos + self._servicios + self._alquiler
-        return f"\n-> El monto total es: ${total}"
+    @property
+    def alimentos(self):
+        return self._alimentos
 
+    @alimentos.setter
+    def alimentos(self, alimentos):
+        self._alimentos = alimentos
 
