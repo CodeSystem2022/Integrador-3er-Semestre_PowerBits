@@ -300,6 +300,16 @@ class Main:
                                         print('4- Limpiar tabla de gastos')
                                         print('5- Salir del menu de ADMIN')
 
+                                        # le pedimos al usuario una opción
+                                        opcion_admin = int(input('\n-> Digite una opción de menú: '))
+
+                                        # en estos condicionales, según la opción que ingrese el usuario,
+                                        # es la acción que realiza
+                                        if opcion_admin == 1:
+                                            # aca con la clase UsuarioDAO y el método mostrar_usuarios, podremos ver en
+                                            # consola el listado de los usuarios registrados
+                                            # también se le pasa el cursor, para poder realizar la acción
+                                            UsuarioDAO2.mostrar_usuarios(cursor)
 
 
                 except Exception as e:
