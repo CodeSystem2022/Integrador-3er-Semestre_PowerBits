@@ -1,14 +1,18 @@
-class Auto:
+from clases.Gasto import Gasto
+
+
+class Vehiculo(Gasto):
     def __init__(self, patente, combustible, seguro):
         self._patente = patente
         self._combustible = combustible
         self._seguro = seguro
+        self._monto = self._patente + self._combustible + self._seguro
 
     def __str__(self):
-        return f"\n-> Mantenimiento del vehículo" \
-               f"\n- Patente: {self._patente}" \
-               f"\n- Combustible: {self._combustible}" \
-               f"\n- Seguro: {self._seguro}"
+        return f"-> Gastos del vehículo\n" \
+               f"\n- Patente: ${self._patente}" \
+               f"\n- Combustible: ${self._combustible}" \
+               f"\n- Seguro: ${self._seguro}"
 
     def mostrar_detalle(self):
         return self.__str__()
@@ -38,8 +42,11 @@ class Auto:
     def seguro(self, seguro):
         self._seguro = seguro
 
-    # Calculamos el monto total
+    @property
+    def monto(self):
+        return self._monto
 
+    # Calculamos el monto total
     def monto_total(self):
         total = 0
         total = self._patente + self._combustible + self._seguro
