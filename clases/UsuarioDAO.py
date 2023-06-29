@@ -56,14 +56,16 @@ class UsuarioDAO2:
         return resultados
 
     @classmethod
-
+    # este método recibe el objeto creado en test y también el cursor,
+    # para poder realizar la acción de agregar un usuario nuevo
     def agregar_usuario(cls, usuario_nuevo, cursor):
-
+        # ahora, para poder crear la tupla con los valores que necesita la sentencia de _INSERTAR_USUARIO,
+        # tenemos que acceder a cada atributo del objeto creado pero por separado
         valores = (usuario_nuevo.nombre,
                    usuario_nuevo.apellido,
                    usuario_nuevo.email,
                    usuario_nuevo.monto_inicial,
                    usuario_nuevo.nombre_usuario,
                    usuario_nuevo.password)
-
+        # de esta forma podremos ejecutar la acción del cursor junto con los valores necesarios de la sentencia
         cursor.execute(cls._INSERTAR_USUARIO, valores)
