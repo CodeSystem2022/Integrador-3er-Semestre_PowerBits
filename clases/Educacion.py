@@ -1,9 +1,17 @@
-class Educacion:
+from clases.Gasto import Gasto
+
+
+class Educacion(Gasto):
     def __init__(self, monto):
         self._monto = monto
 
     def __str__(self):
-        return f'Monto: ${self._monto}'
+        return f'-> Gastos de educación\n' \
+               f'\n- Monto: ${self._monto}'
+
+
+    def mostrar_detalle(self):
+        return self.__str__()
 
     @property
     def monto(self):
@@ -11,4 +19,4 @@ class Educacion:
 
     @monto.setter
     def monto(self, monto):
-        self._monto = monto 
+        self._monto = monto
