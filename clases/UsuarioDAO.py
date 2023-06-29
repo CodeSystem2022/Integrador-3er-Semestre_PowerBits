@@ -28,3 +28,16 @@ class UsuarioDAO2:
         resultados = cursor.fetchall()
         
         return resultados
+
+    @classmethod
+
+    def agregar_usuario(cls, usuario_nuevo, cursor):
+
+        valores = (usuario_nuevo.nombre,
+                   usuario_nuevo.apellido,
+                   usuario_nuevo.email,
+                   usuario_nuevo.monto_inicial,
+                   usuario_nuevo.nombre_usuario,
+                   usuario_nuevo.password)
+
+        cursor.execute(cls._INSERTAR_USUARIO, valores)
