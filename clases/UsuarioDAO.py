@@ -103,3 +103,23 @@ class UsuarioDAO2:
         print('\n- id_usuario / Nombre / Apellido / Email / Ingreso Mensual / Nombre Usuario / Password')
         print(resultado)
         print('--------------------------------------------------------------------------------------------------')
+
+    @classmethod
+    #Método para actualizar datos del usuario, recibe los siguientes parametros nombre_nuevo, apellido_nuevo, email_nuevo,
+    # monto_inicial_nuevo, nombre_usuario_nuevo, password_nuevo, usuario_registrado y cursor
+    def actualizar_usuario(cls, nombre_nuevo, apellido_nuevo, email_nuevo, monto_inicial_nuevo, nombre_usuario_nuevo,
+                           password_nuevo, usuario_registrado, cursor):
+        valores = (nombre_nuevo,   # Creamos una tupla llamada valores que contiene los nuevos valores del usuario.
+                   apellido_nuevo,
+                   email_nuevo,
+                   monto_inicial_nuevo,
+                   nombre_usuario_nuevo,
+                   password_nuevo,
+                   usuario_registrado
+                   )
+        cursor.execute(cls._ACTUALIZAR_USUARIO, valores)  # Ejecutamos la consulta y creamos una variable de clase
+
+        usuario_actualizado = cursor.rowcount  # recupera el número de filas afectadas por la operación de actualización
+                                               # en la base de datos y lo asigna a la variable usuario_actualizado.
+
+        print(f'\n- Usuario Actualizado con éxito: {usuario_actualizado}') # Mostramos un mensaje que indica la cantidad de usuarios actualizados con éxito.
