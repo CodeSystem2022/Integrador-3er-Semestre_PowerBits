@@ -85,3 +85,21 @@ class UsuarioDAO2:
             print('-------------------------------------------------------------------------------------')
             print(f'{resultado}')
         print('-------------------------------------------------------------------------------------')
+
+    @classmethod
+    # a este método le tenemos que pasar los datos del usuario que inicio sesión, y el cursor para realizar la consulta
+    def mostrar_un_usuario(cls, usuario_registrado, password_registrado, cursor):
+        # creamos la tupla de valores con los datos del usuario
+        valores = (usuario_registrado, password_registrado)
+        # ejecutamos el cursor con la sentencia _MOSTRAR_UN_USUARIO, para que solo se muestren los datos del usuario que
+        # inicio sesión
+        cursor.execute(cls._MOSTRAR_UN_USUARIO, valores)
+        # creamos una variable para almacenar la fila que se "afectó" al momento de realizar la consulta, que en este
+        # caso sería la que contiene los datos del usuario que inicio sesión
+        resultado = cursor.fetchall()
+        # y mostramos los datos
+        print('--------------------------------------------------------------------------------------------------')
+        print('                                      -> DATOS DE USUARIO <-                                      ')
+        print('\n- id_usuario / Nombre / Apellido / Email / Ingreso Mensual / Nombre Usuario / Password')
+        print(resultado)
+        print('--------------------------------------------------------------------------------------------------')
