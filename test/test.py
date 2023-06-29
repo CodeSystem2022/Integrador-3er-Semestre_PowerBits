@@ -251,3 +251,21 @@ class Main:
 
                 except Exception as e:
                     print(f'\n-> Ocurrió un error en el menu principal: {e}')
+
+ elif opcion == 2:
+
+                        print('\n -- USUARIO NUEVO --')
+                        print('-> Por favor digite: ')
+                        nombre = input('- Nombre: ')
+                        apellido = input('- Apellido: ')
+                        email = input('- Email: ')
+                        monto_inicial = int(input('- Ingreso Inicial: $'))
+                        nombre_usuario = input('- Nombre de Usuario: ')
+                        password = input('- Password: ')
+                        # aca lo mismo que en la opción 1, le pedimos todos los datos al usuario nuevo, y creamos un
+                        # objeto de tipo Usuario, pasándole los datos anteriormente pedidos.
+                        usuario_nuevo = Usuario(nombre, apellido, email, monto_inicial, nombre_usuario, password)
+                        # ahora, con la clase UsuarioDAO y el método agregar_usuario, podremos agregar un usuario nuevo
+                        # a la base de datos, para poder realizar esta acción le pasamos al método, el objeto creado y
+                        # el cursor.
+                        UsuarioDAO2.agregar_usuario(usuario_nuevo, cursor)
