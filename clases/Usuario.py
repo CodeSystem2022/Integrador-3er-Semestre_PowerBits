@@ -1,27 +1,29 @@
 class Usuario:
-    contador_usuario = 0 #Creamos una variable estatica
-    def __init__(self, nombre, apellido, email, monto_inicial, nombre_usuario, password): #Pasamos todos los parametros necesesarios para nuestro constructor
-        Usuario.contador_usuario += 1 #Iniciamos nuestra variable estatica contador_usuario.
-        #cada vez que se crea un nuevo objeto Usuario, el valor de contador_usuario se incrementa,
+    contador_usuario = 0  # Creamos una variable estatica
+
+    def __init__(self, nombre, apellido, email, monto_inicial, nombre_usuario,
+                 password):  # Pasamos todos los parametros necesesarios para nuestro constructor
+        Usuario.contador_usuario += 1  # Iniciamos nuestra variable estatica contador_usuario.
+        # cada vez que se crea un nuevo objeto Usuario, el valor de contador_usuario se incrementa,
         # asegurando que cada usuario tenga un ID único
         self._id_usuario = Usuario.contador_usuario
         self._nombre = nombre
         self._apellido = apellido
-        self._email = email                       #Se asignan los demás parámetros a las variables de instancia correspondientes
+        self._email = email  # Se asignan los demás parámetros a las variables de instancia correspondientes
         self._monto_inicial = monto_inicial
         self._nombre_usuario = nombre_usuario
         self._password = password
 
-    #Creamos el toString
-    def __str__(self):  #Nos enseña los datos del usuario
+    # Creamos el toString
+    def __str__(self):  # Nos enseña los datos del usuario
         return f"\n-> Datos del Usuario:" \
                f"\n- id numero: {self._id_usuario}" \
-               f"\n- Nombre: {self._nombre}" \              
+               f"\n- Nombre: {self._nombre}" \
                f"\n- Apellido: {self._apellido}" \
                f"\n- Email: {self._email}" \
                f"\n- Monto Inicial: ${self._monto_inicial}"
 
-    #Metodo mostrar detalles retornando el toString
+    # Metodo mostrar detalles retornando el toString
     def mostrar_detalles(self):
         return self.__str__()
 
@@ -71,7 +73,7 @@ class Usuario:
         return self._nombre_usuario
 
     @nombre_usuario.setter
-    def usuario(self, nombre_usuario):
+    def nombre_usuario(self, nombre_usuario):
         self._nombre_usuario = nombre_usuario
 
     @property
@@ -79,5 +81,5 @@ class Usuario:
         return self._password
 
     @password.setter
-    def usuario(self, password):
+    def password(self, password):
         self._password = password
