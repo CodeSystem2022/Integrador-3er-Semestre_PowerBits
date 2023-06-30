@@ -1,4 +1,4 @@
-from clases import UsuarioDAO
+from clases.UsuarioDAO import UsuarioDAO
 
 #La clase Gasto la utilizamos para guardar los gastos suministrados por el usuario en la base de datos
 

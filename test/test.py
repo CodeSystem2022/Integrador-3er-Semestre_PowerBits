@@ -288,8 +288,8 @@ class Main:
                                 # el valor que el usuario le asigne
                                 opcion_admin = None
 
-                                # el ciclo while interior, va a funcionar mientras la opción sea diferente de 3,
-                                # en el momento que sea igual a 3, el programa sale del menu de administrador y
+                                # el ciclo while interior, va a funcionar mientras la opción sea diferente de 5,
+                                # en el momento que sea igual a 5, el programa sale del menu de administrador y
                                 # vuelve al menu principal
                                 while opcion_admin != 5:
                                     try:
@@ -362,23 +362,29 @@ class Main:
                                                     print(f'\n- Ocurrió un error en el menu de usuario ADMIN: {e}')
 
                                         elif opcion_admin == 4:
+                                            # Ingresamos una bandera = True, para que entre directo al while
                                             bandera = True
                                             while bandera:
+                                                # Utilizamos un try para poder atrapar los errores sin necesidad de parar el programa
                                                 try:
+                                                    # En esta opcion lo que se va hacer es limpiar toda la tabla de gastos
                                                     print('\n       -- LIMPIAR TABLA DE GASTOS --')
+                                                    # Preguntamos si esta seguro porque una vez borrado no pueden recuperarse los datos
                                                     print(f'Esta seguro que desea eliminar todos los gastos: ')
                                                     print('\n 1- Sí')
                                                     print('\n 2- No, deseo volver al menú principal')
                                                     opcion_eliminar_gastos = int(input('\n->Digite una opción: '))
+                                                    # Usamos un if, elif para las opciones que ingrese si quiere eliminar o no los gastos
                                                     if opcion_eliminar_gastos == 1:
+                                                        # Llamamos al metodo "limpiar_gastos" de la clase Gasto para limpiar todos los gastos
                                                         Gasto.limpiar_gastos(cursor)
-                                                        bandera = False
+                                                        bandera = False # Si eligio limpiar los datos la bandera cambia su valor a False para que salga del while
                                                     elif opcion_eliminar_gastos == 2:
-                                                        bandera = False
+                                                        bandera = False # Si eligio la opcion 2 la bandera cambia su valor a False y sale del while
                                                     else:
-                                                        print(f'\n- Opción incorrecta: {opcion_eliminar_gastos}')
+                                                        print(f'\n- Opción incorrecta: {opcion_eliminar_gastos}')# Mostramos la opcion incorrecta ingresada
                                                 except Exception as e:
-                                                    print(f'\n- Ocurrió un error: {e}')
+                                                    print(f'\n- Ocurrió un error: {e}') # Mostramos el error si es que ocurrio alguno
 
                                         elif opcion_admin == 5:
                                             print('\n-> Salio del menu de admin')
