@@ -5,7 +5,7 @@ class Gastos_varios(Gasto):
 
     # Inicializamos el objeto y le pasamos los parámetros
     # Los parámetros los utilizamos para establecer las variables de instancia
-    def __init__(self, detalle, _monto_gastos_varios):
+    def __init__(self, detalle, monto_gastos_varios):
         self._detalle = detalle
         self._monto_gastos_varios = monto_gastos_varios
 
@@ -32,6 +32,6 @@ class Gastos_varios(Gasto):
     def monto_gastos_varios(self):
         return self._monto_gastos_varios
 
-    @monto.setter
+    @monto_gastos_varios.setter
     def monto_gastos_varios(self, monto_gastos_varios):
         self._monto_gastos_varios = monto_gastos_varios
