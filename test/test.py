@@ -311,6 +311,55 @@ class Main:
                                             # también se le pasa el cursor, para poder realizar la acción
                                             UsuarioDAO2.mostrar_usuarios(cursor)
 
+                                        elif opcion_admin == 2:
+                                        print(f'\n  - - DATOS REGISTRADOS ANTERIORMENTE - -')
+                                        # Llamamos al metodo mostrar_usuarios para que nos muestre los datos del usuario a actualizar.
+                                        UsuarioDAO2.mostrar_usuarios(cursor)
+                                        print('\n            -- ACTUALIZAR DATOS --')
+                                        # Acá le pedimos todos los datos al usuario para que los actualice.
+                                        print('\n-> Por favor digite: ')
+                                        id_usuario_actualizar = int(input('- Id Usuario: '))
+                                        nombre_nuevo = input('- Nombre: ')
+                                        apellido_nuevo = input('- Apellido: ')
+                                        email_nuevo = input('- Email: ')
+                                        monto_inicial_nuevo = input('- Ingreso Mensual: $')
+                                        nombre_usuario_nuevo = input('- Nombre de Usuario: ')
+                                        password_nuevo = input('- Password: ')
+                                        # Utilizamos el metodo actualizar_usuario_admin y le pasamos los parámetros de (nombre_nuevo, apellido_nuevo,email_nuevo,
+                                        # monto_inicial_nuevo,nombre_usuario_nuevo,password_nuevo,id_usuario_actualizar y cursor)
+                                        # para que este actualice los datos del usuario.
+                                        UsuarioDAO.actualizar_usuario_admin(nombre_nuevo, apellido_nuevo,
+                                                                             email_nuevo,
+                                                                             monto_inicial_nuevo,
+                                                                             nombre_usuario_nuevo,
+                                                                             password_nuevo, id_usuario_actualizar,
+                                                                             cursor)
+
+                                        elif opcion_admin == 3:
+                                        # Ingresamos una bandera = True, para que entre directo al while
+                                        bandera = True
+                                        while bandera:
+                                            # utilizamos un try para atrapar los errores que puedan ocurrir
+                                            try:
+                                                # Mostramos una pequeña advertencia sobre si está seguro de querer eliminar todos los usuarios registrados
+                                                print('\n        -- LIMPIAR TABLA DE USUARIOS --')
+                                                print(f'Esta seguro que desea eliminar todos los usuarios: ')
+                                                print('\n 1- Sí')
+                                                print('\n 2- No, deseo volver al menú principal')
+                                                opcion_eliminar_usuarios = int(input('\n-> Digite una opción: '))
+                                                # Si el usuario ingresa "1" se elimnan todos los usuarios
+                                                if opcion_eliminar_usuarios == 1:
+                                                    UsuarioDAO.limpiar_usuarios(cursor)
+                                                    bandera = False
+                                                # Si el usuario ingresa "2" se vuelve al menú principal
+                                                elif opcion_eliminar_usuarios == 2:
+                                                    bandera = False
+                                                else:
+                                                    print(f'\n- Opción incorrecta: {opcion_eliminar_usuarios}')
+                                            # Esto nos va a decir si hay algún error y el tipo de error dentro del menú de usuario ADMIN
+                                            except Exception as e:
+                                                print(f'\n- Ocurrió un error en el menu de usuario ADMIN: {e}')
+
 
                 except Exception as e:
                     print(f'\n-> Ocurrió un error en el menu principal: {e}')
