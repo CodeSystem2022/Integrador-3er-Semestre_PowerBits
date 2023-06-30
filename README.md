@@ -4,10 +4,14 @@
  
 <h2 align="center">
   
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Teko&size=38&duration=1&pause=1000&color=20C20E&center=true&width=480&height=80&lines=GESTOR+DE+GASTOS" alt="Typing SVG" /></a>
-  
-![corto2](https://github.com/CodeSystem2022/Integrador-3er-Semestre_PowerBits/assets/112595518/12c0fbaf-8679-4ced-8d41-9f5fb2610f15)
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Teko&size=38&duration=1&pause=1000&color=20C20E&center=true&width=480&height=80&lines=GESTOR+DE+GASTOS" alt="Typing SVG" /></a><a target="blank"><img align="left" src="https://github.com/PowerBits-UTN/pruebo_proyecto/blob/main/chancho2.png " height="120" width="140" /></a><a target="blank"><img align="right" src="https://github.com/PowerBits-UTN/pruebo_proyecto/blob/main/caja-registradora.png" height="120" width="120" /></a> 
+
+![corto2](https://github.com/CodeSystem2022/Integrador-3er-Semestre_PowerBits/assets/112595518/6583ce59-0533-4882-bafb-97c0fb7fc553)
 </h2>
+
+
+
+
 
 
 | **Lenguajes de Programación Utilizados**| |
