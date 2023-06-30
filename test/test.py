@@ -36,7 +36,7 @@ class Main:
                     print('1- Iniciar sesión')
                     print('2- Usuario nuevo')
                     print('3- Ingresar como ADMIN')
-                    print('4- Salir del programa')
+                    print('4- Salir del programa y guardar cambios')
 
                     # le pedimos al usuario que digite una opción
                     opcion = int(input('\n-> Digite una opción de menú: '))
@@ -339,6 +339,7 @@ class Main:
                                         # Ingresamos una bandera = True, para que entre directo al while
                                             bandera = True
                                             while bandera:
+
                                                 # utilizamos un try para atrapar los errores que puedan ocurrir
                                                 try:
                                                     # Mostramos una pequeña advertencia sobre si está seguro de querer eliminar todos los usuarios registrados
